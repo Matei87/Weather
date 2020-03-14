@@ -68,7 +68,7 @@ body {
 }
 .uv-index, .container-fluid .forecast-uv-index1, .container-fluid  .forecast-uv-index2, .container-fluid  .forecast-uv-index3,
 .container-fluid  .forecast-uv-index4, .container-fluid  .forecast-uv-index5, .container-fluid  .forecast-uv-index6 {
-    border-radius: 5px;
+    border-radius: 2px; padding: 0; margin: 0;
 }
 .container-fluid .row {
     display: flex; justify-content: space-around; align-items: center;
