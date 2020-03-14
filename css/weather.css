@@ -132,7 +132,7 @@ footer {
 /* Extra small */
 @media (max-width: 575.98px) {
     .container  {
-        width: 90vw; 
+        width: 90vw; margin: 2%;
     }
     .location-timezone {
         font-size: 16px;
