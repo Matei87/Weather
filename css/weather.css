@@ -7,7 +7,7 @@ body {
     background: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.2)), url("https://www.zastavki.com/pictures/1440x900/2009/Nature_Clouds_Gray_clouds_013587_.jpg") no-repeat fixed center;
     background-size: cover;
     font-family: "Comic Sans MS", sans-serif;
-    color: white; position: relative;
+    color: white; 
 }
 .location {
     text-align: center;
@@ -110,7 +110,6 @@ header {
     background-color: black;
     width: 100%; height: 60px;
     display: flex; justify-content: left; align-items: center;
-    position: absolute; top: 0;
 }
 header h2 {
     margin: 0; padding-left: 20%;
@@ -121,7 +120,6 @@ footer {
     text-align: center;
     display: flex; justify-content: center; align-items: center;
     opacity: .9;
-    position: absolute; bottom: 0;
 }
 
 
