@@ -187,7 +187,6 @@ window.addEventListener('load', () => {
                                     let str = i.toString();
                                     setIcons(data.daily.data[i].icon, document.querySelector('.forecast-icon' + i));
 
-                                    console.log(data.daily.data[i].icon);
                                 } })();
 
                          //Set Icons
