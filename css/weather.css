@@ -130,6 +130,9 @@ footer {
     .container  {
         width: 90vw;
     }
+    .location-timezone {
+        font-size: 16px;
+    }
     .timp {
         top: -5px;
     }
