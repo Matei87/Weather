@@ -4,7 +4,7 @@ html {
 body {
     min-height: 100%;
     display: flex; justify-content: center; flex-direction: column; align-items: center;
-    background: linear-gradient(rgba(255,255,255,.4), rgba(255,255,255,.2)), url("https://www.zastavki.com/pictures/1440x900/2009/Nature_Clouds_Gray_clouds_013587_.jpg") no-repeat fixed center;
+    background: linear-gradient(rgba(255,255,255,.4) 100%, rgba(255,255,255,.2)), url("https://www.zastavki.com/pictures/1440x900/2009/Nature_Clouds_Gray_clouds_013587_.jpg") no-repeat fixed center;
     background-size: cover;
     font-family: "Comic Sans MS", sans-serif;
     color: white; 
