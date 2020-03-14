@@ -66,6 +66,10 @@ body {
 .container .location {
     display: flex;
 }
+.uv-index, .container-fluid .forecast-uv-index1, .container-fluid  .forecast-uv-index2, .container-fluid  .forecast-uv-index3,
+.container-fluid  .forecast-uv-index4, .container-fluid  .forecast-uv-index5, .container-fluid  .forecast-uv-index6 {
+    border-radius: 5px;
+}
 .container-fluid .row {
     display: flex; justify-content: space-around; align-items: center;
     border-radius: 10px;
@@ -128,7 +132,7 @@ footer {
 /* Extra small */
 @media (max-width: 575.98px) {
     .container  {
-        width: 90vw; border-radius: 10px;
+        width: 90vw; 
     }
     .location-timezone {
         font-size: 16px;
