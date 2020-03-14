@@ -39,7 +39,7 @@ window.addEventListener('load', () => {
                         const suma = data.daily.summary;
 
                         //Set DOM elements from API
-                            temperatureDegree.textContent = Math.round((temperature - 32) * (5 / 9)) + '°';
+                            temperatureDegree.textContent = Math.round((temperature - 32) * (5 / 9)) + '° C';
                             locationTimezone.textContent = data.timezone;
                             temperatureDescription.textContent = summary;
                             humiditySection.textContent = 'Umiditate: ' + Math.round(humidity * 100) + '%';
