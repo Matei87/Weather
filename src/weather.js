@@ -32,7 +32,7 @@ window.addEventListener('load', () => {
                     fetch(api)
                         .then( res => res.json())
                         .then( data => {
-                            console.log(data);
+                            
                         const {temperature, summary, icon, humidity, precipProbability, precipType, windSpeed, uvIndex, visibility, time} = data.currently;
                         const {temperatureMin, temperatureMax} = data.daily.data[0];
                         const suma = data.daily.summary;
@@ -53,14 +53,6 @@ window.addEventListener('load', () => {
                                 tipPrecipitatii.innerHTML = 'Tip Precipitatii: ' + znow;
                             }
 
-
-                            // if (precipitatii === undefined) {
-                            //     $('.forecast-precipitatii' + i).html('Tip Precipitatii: ' + '-');
-                            // } else if (precipitatii === 'rain'){
-                            //     $('.forecast-precipitatii' + i).html('Tip Precipitatii: ' + rein);
-                            // } else if (precipitatii === 'snow') {
-                            //     $('.forecast-precipitatii' + i).html('Tip Precipitatii: ' + znow);
-                            // }
                             vant.textContent = 'Viteza vant: ' + Math.round(windSpeed * 1.6) + ' km/h';
                             temperaturaMaxima.textContent = Math.round((temperatureMax - 32) * (5 / 9)) + '°';
                             temperaturaMinima.textContent = Math.round((temperatureMin - 32) * (5 / 9)) + '°' + '/ ';
@@ -101,7 +93,7 @@ window.addEventListener('load', () => {
                                     let str = i.toString();
                                     $('.forecast-minima' + i).html(tempMin);
                                     $('.forecast-maxima' + i).html(tempMax);
-                                    console.log(data.daily.data[i].temperatureMin, data.daily.data[i].temperatureMax);
+                                    
                                 };
                             })();
 
@@ -110,7 +102,7 @@ window.addEventListener('load', () => {
                                 for (let i = 0; i < data.daily.data.length; i++){
                                     let str = i.toString();
                                     $('.forecast-summary' + i).html(data.daily.data[i].summary);
-                                    console.log(data.daily.data[i].summary);
+                                    
                                 }
                             } )();
 
@@ -120,7 +112,7 @@ window.addEventListener('load', () => {
                                     let vant = Math.round(data.daily.data[i].windSpeed * 1.6);
                                     let str = i.toString();
                                     $('.forecast-vant' + i).html('Viteza vant: ' + vant + ' km/h');
-                                    console.log(data.daily.data[i].windSpeed);
+                                    
                                 }
                             } )();
 
@@ -138,7 +130,7 @@ window.addEventListener('load', () => {
                                     } else if (precipitatii === 'snow') {
                                         $('.forecast-precipitatii' + i).html('Tip Precipitatii: ' + znow);
                                     }
-                                    console.log(data.daily.data[i].precipType);
+                                    
                             } })();
 
                             //Vizibilitate
@@ -147,7 +139,7 @@ window.addEventListener('load', () => {
                                     let vizibilitate = Math.round(data.daily.data[i].visibility);
                                     let str = i.toString();
                                      $('.forecast-vizibilitate' + i).html('Vizibilitate: ' + vizibilitate + '+ km');
-                                    console.log(data.daily.data[i].visibility);
+                                    
                                 } })();
 
                             //UV Index
@@ -167,7 +159,7 @@ window.addEventListener('load', () => {
                                         $('.forecast-uv-index' + i).css('background', 'blueviolet');
                                     }
                                     $('.forecast-uv-index' + i).html('UV Index: ' + uvindex);
-                                    console.log(data.daily.data[i].uvIndex);
+                                    
                                 } })();
 
                             //zile
@@ -186,7 +178,7 @@ window.addEventListener('load', () => {
                                     let str = i.toString();
                                     $('.forecast-zi' + i).html(formatDay);
 
-                                    console.log(data.daily.data[i].time);
+                                    
                                 } })();
 
                             //iconite
