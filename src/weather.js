@@ -43,7 +43,7 @@ window.addEventListener('load', () => {
                             locationTimezone.textContent = data.timezone;
                             temperatureDescription.textContent = summary;
                             humiditySection.textContent = 'Umiditate: ' + Math.round(humidity * 100) + '%';
-                            precipitatiiSection.textContent = 'Precipitatii: ' + precipProbability * 100 + '%';
+                            precipitatiiSection.textContent = 'Precipitatii: ' + Math.round(precipProbability * 100) + '%';
                             let znow = `<i class="fas fa-snowflake"></i>`;
                             let rein = `<i class="fas fa-tint"></i>`;
                             if (precipType === undefined) {
