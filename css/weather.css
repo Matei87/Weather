@@ -137,6 +137,10 @@ footer {
     .container  {
         width: 80vw; 
     }
+     .forecast-summary1, .forecast-summary2, .forecast-summary3, .forecast-summary4,
+    .forecast-summary5, .forecast-summary6 {
+        text-align: center;
+    }
     .location-timezone {
         font-size: 16px;
     }
