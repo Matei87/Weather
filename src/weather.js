@@ -27,7 +27,6 @@ window.addEventListener('load', () => {
                     lat = position.coords.latitude;
 
                     const proxy = "https://cors-anywhere.herokuapp.com/";
-                        //const proxy = "http://ipinfo.io/json";
                     const api = `${proxy}https://api.darksky.net/forecast/d752ff602d7b3ef048b346636958fc67/${lat},${long}`;
 
                     fetch(api)
@@ -42,19 +41,19 @@ window.addEventListener('load', () => {
                             temperatureDegree.textContent = Math.round((temperature - 32) * (5 / 9)) + '° C';
                             locationTimezone.textContent = data.timezone;
                             temperatureDescription.textContent = summary;
-                            humiditySection.textContent = 'Umiditate: ' + Math.round(humidity * 100) + '%';
-                            precipitatiiSection.textContent = 'Precipitatii: ' + Math.round(precipProbability * 100) + '%';
+                            humiditySection.textContent = 'Humidity: ' + Math.round(humidity * 100) + '%';
+                            precipitatiiSection.textContent = 'Precipitation: ' + Math.round(precipProbability * 100) + '%';
                             let znow = `<i class="fas fa-snowflake"></i>`;
                             let rein = `<i class="fas fa-tint"></i>`;
                             if (precipType === undefined) {
-                                tipPrecipitatii.textContent = 'Tip Precipitatii: ' + '-';
+                                tipPrecipitatii.textContent = 'Precipitation Type: ' + '-';
                             } if (precipType === 'rain'){
-                                tipPrecipitatii.innerHTML = 'Tip Precipitatii: ' + rein;
+                                tipPrecipitatii.innerHTML = 'Precipitation Type: ' + rein;
                             } else if (precipType === 'snow') {
-                                tipPrecipitatii.innerHTML = 'Tip Precipitatii: ' + znow;
+                                tipPrecipitatii.innerHTML = 'Precipitation Type: ' + znow;
                             }
 
-                            vant.textContent = 'Viteza vant: ' + Math.round(windSpeed * 1.6) + ' km/h';
+                            vant.textContent = 'Wind: ' + Math.round(windSpeed * 1.6) + ' km/h';
                             temperaturaMaxima.textContent = Math.round((temperatureMax - 32) * (5 / 9)) + '°';
                             temperaturaMinima.textContent = Math.round((temperatureMin - 32) * (5 / 9)) + '°' + '/ ';
                             if (uvIndex <=2){
@@ -69,14 +68,14 @@ window.addEventListener('load', () => {
                                 uv.style.backgroundColor = 'blueviolet';
                             }
                             uv.textContent = 'UV Index: ' + uvIndex;
-                            vizibilitate.textContent = 'Vizibilitate: ' + Math.round(visibility) + '+ km';
+                            vizibilitate.textContent = 'Visibility: ' + Math.round(visibility) + '+ km';
 
                             let unix_timestamp = time;
                             let date = new Date(unix_timestamp * 1000);
                             let showDay = date.getDate();
-                            let days = ['Duminica', 'Luni',  'Marti', 'Miercuri', 'Joi', 'Vineri', 'Sambata'];
+                            let days = ['Sunday', 'Monday',  'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
                             let showDays = days[date.getDay()];
-                            let months = ['Ianuarie','Februarie','Martie','Aprilie','Mai','Iunie','Iulie','August','Septembrie','Octombrie','Noiembrie','Decembrie'];
+                            let months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
                             let showMonth = months[date.getMonth()];
                             let formatDay = showDay + ' ' + showMonth;
                             timp.textContent = showDays + ' ' + formatDay;
@@ -112,7 +111,7 @@ window.addEventListener('load', () => {
                                 for (let i = 0; i < data.daily.data.length; i++){
                                     let vant = Math.round(data.daily.data[i].windSpeed * 1.6);
                                     let str = i.toString();
-                                    $('.forecast-vant' + i).html('Viteza vant: ' + vant + ' km/h');
+                                    $('.forecast-vant' + i).html('Wind: ' + vant + ' km/h');
                                     
                                 }
                             } )();
@@ -125,11 +124,11 @@ window.addEventListener('load', () => {
                                     let precipitatii = data.daily.data[i].precipType;
                                     let str = i.toString();
                                     if (precipitatii === undefined) {
-                                        $('.forecast-precipitatii' + i).html('Tip Precipitatii: ' + '-');
+                                        $('.forecast-precipitatii' + i).html('Precipitation Type: ' + '-');
                                     } else if (precipitatii === 'rain'){
-                                        $('.forecast-precipitatii' + i).html('Tip Precipitatii: ' + rein);
+                                        $('.forecast-precipitatii' + i).html('Precipitation Type: ' + rein);
                                     } else if (precipitatii === 'snow') {
-                                        $('.forecast-precipitatii' + i).html('Tip Precipitatii: ' + znow);
+                                        $('.forecast-precipitatii' + i).html('Precipitation Type: ' + znow);
                                     }
                                     
                             } })();
@@ -139,7 +138,7 @@ window.addEventListener('load', () => {
                                 for (let i = 0; i < data.daily.data.length; i++){
                                     let vizibilitate = Math.round(data.daily.data[i].visibility);
                                     let str = i.toString();
-                                     $('.forecast-vizibilitate' + i).html('Vizibilitate: ' + vizibilitate + '+ km');
+                                     $('.forecast-vizibilitate' + i).html('Visibility: ' + vizibilitate + '+ km');
                                     
                                 } })();
 
@@ -170,9 +169,9 @@ window.addEventListener('load', () => {
                                     let unix_timestamp = data.daily.data[i].time;
                                     let date = new Date(unix_timestamp * 1000);
                                     let showDay = date.getDate();
-                                    let days = ['Duminica', 'Luni',  'Marti', 'Miercuri', 'Joi', 'Vineri', 'Sambata'];
+                                    let days = ['Sunday', 'Monday',  'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
                                     let showDays = days[date.getDay()];
-                                    let months = ['Ianuarie','Februarie','Martie','Aprilie','Mai','Iunie','Iulie','August','Septembrie','Octombrie','Noiembrie','Decembrie'];
+                                    let months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
                                     let showMonth = months[date.getMonth()];
                                     let formatDay =  showDays + ' ' + showDay + ' ' + showMonth;
 
