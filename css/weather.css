@@ -160,6 +160,9 @@ footer {
     .container  { 
         width: 75vw;
     }
+     .container-fluid .row .col-sm-5 {
+         height: 30vh;
+    }
     .timp {
         top: -5px;
     }
