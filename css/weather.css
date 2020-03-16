@@ -75,7 +75,7 @@ body {
 }
 .container-fluid .row {
     display: flex; justify-content: space-around; align-items: center;
-    border-radius: 10px; align-items: center;
+    border-radius: 10px; text-align: center;
     color: #eee; 
     opacity: 0.75;
 }
