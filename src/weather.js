@@ -49,7 +49,7 @@ window.addEventListener('load', () => {
                             } if (precipType === 'rain'){
                                 tipPrecipitatii.innerHTML = 'Precipitation: ' + Math.round(precipProbability * 100) + '% ' + rein;
                             } else if (precipType === 'snow') {
-                                tipPrecipitatii.innerHTML = 'Precipitation: ' Math.round(precipProbability * 100) + '% ' + znow;
+                                tipPrecipitatii.innerHTML = 'Precipitation: ' + Math.round(precipProbability * 100) + '% ' + znow;
                             }
 
                             vant.textContent = 'Wind: ' + Math.round(windSpeed * 1.6) + ' km/h';
