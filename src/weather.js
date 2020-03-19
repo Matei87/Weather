@@ -10,7 +10,6 @@ window.addEventListener('load', () => {
         let temperatureSection = document.querySelector('.temperature');
         const temperatureSpan = document.querySelector('.temperature span');
         let humiditySection = document.querySelector('.humidity');
-        let precipitatiiSection = document.querySelector('.precipitatii');
         let tipPrecipitatii = document.querySelector('.tip-precipitatii');
         let vant = document.querySelector('.vant');
         let temperaturaMaxima = document.querySelector('.maxima');
@@ -42,15 +41,15 @@ window.addEventListener('load', () => {
                             locationTimezone.textContent = data.timezone;
                             temperatureDescription.textContent = summary;
                             humiditySection.textContent = 'Humidity: ' + Math.round(humidity * 100) + '%';
-                            precipitatiiSection.textContent = 'Precipitation: ' + Math.round(precipProbability * 100) + '%';
+                            
                             let znow = `<i class="fas fa-snowflake"></i>`;
                             let rein = `<i class="fas fa-tint"></i>`;
                             if (precipType === undefined) {
                                 tipPrecipitatii.textContent = 'Precipitation Type: ' + '-';
                             } if (precipType === 'rain'){
-                                tipPrecipitatii.innerHTML = 'Precipitation Type: ' + rein;
+                                tipPrecipitatii.innerHTML = 'Precipitation: ' + Math.round(precipProbability * 100) + '% ' + rein;
                             } else if (precipType === 'snow') {
-                                tipPrecipitatii.innerHTML = 'Precipitation Type: ' + znow;
+                                tipPrecipitatii.innerHTML = 'Precipitation: ' Math.round(precipProbability * 100) + '% ' + znow;
                             }
 
                             vant.textContent = 'Wind: ' + Math.round(windSpeed * 1.6) + ' km/h';
