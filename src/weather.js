@@ -45,7 +45,7 @@ window.addEventListener('load', () => {
                             let znow = `<i class="fas fa-snowflake"></i>`;
                             let rein = `<i class="fas fa-tint"></i>`;
                             if (precipType === undefined) {
-                                tipPrecipitatii.textContent = 'Precipitation Type: ' + '-';
+                                tipPrecipitatii.textContent = 'Precipitation: ' + '-';
                             } if (precipType === 'rain'){
                                 tipPrecipitatii.innerHTML = 'Precipitation: ' + Math.round(precipProbability * 100) + '% ' + rein;
                             } else if (precipType === 'snow') {
