@@ -121,13 +121,14 @@ window.addEventListener('load', () => {
                                     let znow = `<i class="fas fa-snowflake"></i>`;
                                     let rein = `<i class="fas fa-tint"></i>`;
                                     let precipitatii = data.daily.data[i].precipType;
+                                    let precipProbability = Math.round(data.daily.data[i].precipProbability * 100) + '% ';
                                     let str = i.toString();
                                     if (precipitatii === undefined) {
-                                        $('.forecast-precipitatii' + i).html('Precipitation Type: ' + '-');
+                                        $('.forecast-precipitatii' + i).html('Precipitation: ' + '-');
                                     } else if (precipitatii === 'rain'){
-                                        $('.forecast-precipitatii' + i).html('Precipitation Type: ' + rein);
+                                        $('.forecast-precipitatii' + i).html('Precipitation: ' + precipProbability + rein);
                                     } else if (precipitatii === 'snow') {
-                                        $('.forecast-precipitatii' + i).html('Precipitation Type: ' + znow);
+                                        $('.forecast-precipitatii' + i).html('Precipitation: ' + precipProbability + znow);
                                     }
                                     
                             } })();
