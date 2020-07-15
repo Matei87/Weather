@@ -1,4 +1,4 @@
-# Weather
+# Weathery
 
 An app that shows the weather forecast for the next 6 days.
 - I used HTML, CSS for structure and design
