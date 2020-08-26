@@ -1,7 +1,7 @@
 # Weathery
 
-An app that shows the weather forecast for the next 6 days.
-- I used HTML, CSS for structure and design
-- Fetch to get data in JSON format
-- Javascript for API manipulation
-- Media queries and Bootstrap for responsive design
+Weathery is an online web application where you can check the weather off every place around the world.
+
+# Built With
+*  Bootstrap 4
+* Javascript
