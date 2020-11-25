@@ -1,8 +1,24 @@
 "use strict";
 
 window.addEventListener('load', () => {
-        let long;
-        let lat;
+        
+     if(navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            let long = position.coords.longitude;
+            let lat = position.coords.latitude;
+            let api = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/d752ff602d7b3ef048b346636958fc67/${lat},${long}`;
+            fetching(api);
+                
+        }, error => {
+            let newapi = `https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/d752ff602d7b3ef048b346636958fc67/44.427560,26.093520`;
+            fetching(newapi);
+                
+        })
+    }
+});
+
+function fetching (api) {
+                
         let temperatureDescription = document.querySelector('.temperature-description');
         let temperatureDegree = document.querySelector('.temperature-degree');
         let locationTimezone = document.querySelector('.location-timezone');
@@ -18,16 +34,7 @@ window.addEventListener('load', () => {
         let vizibilitate = document.querySelector('.vizibilitate');
         let timp = document.querySelector('.timp');
         let sumar = document.querySelector('.summary');
-
-
-        if (navigator.geolocation){
-                navigator.geolocation.getCurrentPosition(position => {
-                    long = position.coords.longitude;
-                    lat = position.coords.latitude;
-
-                    const proxy = "https://cors-anywhere.herokuapp.com/";
-                    const api = `${proxy}https://api.darksky.net/forecast/d752ff602d7b3ef048b346636958fc67/${lat},${long}`;
-
+        
                     fetch(api)
                         .then( res => res.json())
                         .then( data => {
@@ -197,13 +204,12 @@ window.addEventListener('load', () => {
                         });
 
                 });
-        } else {
-            alert("Your browser does not support geolocation services.");
         }
+        
 function setIcons(icon, iconID) {
         const skycons = new Skycons({color: "yellow"});
         const currentIcon = icon.replace(/-/g, "_").toUpperCase();
         skycons.play();
         return skycons.set(iconID, Skycons[currentIcon]);
 }
-});
+}
