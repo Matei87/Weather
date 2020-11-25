@@ -204,7 +204,7 @@ function fetching (api) {
                         });
 
                 });
-        }
+        
         
 function setIcons(icon, iconID) {
         const skycons = new Skycons({color: "yellow"});
